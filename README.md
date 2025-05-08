@@ -77,7 +77,7 @@ mvn test
 
 ## 📂  Pruebas de integración Colección Postman
 
-Se incluye archivo `zara-pricing-api.postman_collection.json` con los 7 casos para importar directamente en Postman.
+Se incluye archivo `zara-pricing-api.postman_collection.json` con 7 casos para importar directamente en Postman.
 
 ---
 
