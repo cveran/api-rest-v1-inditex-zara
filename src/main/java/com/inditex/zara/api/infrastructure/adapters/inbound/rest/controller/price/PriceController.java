@@ -1,8 +1,10 @@
-package com.inditex.zara.api.infrastructure.adapters.inbound.rest;
+package com.inditex.zara.api.infrastructure.adapters.inbound.rest.controller.price;
 
 import com.inditex.zara.api.application.services.GetApplicablePriceService;
 import com.inditex.zara.api.domain.exceptions.PriceNotFoundException;
 import com.inditex.zara.api.domain.entities.Price;
+import com.inditex.zara.api.infrastructure.adapters.inbound.rest.controller.price.dtos.PriceResponseDTO;
+import com.inditex.zara.api.infrastructure.adapters.inbound.rest.controller.price.mapper.PriceMapper;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +28,7 @@ import java.time.LocalDateTime;
 public class PriceController {
 
     private final GetApplicablePriceService priceService;
+    private final PriceMapper priceMapper;
 
     @Operation(
             summary = "Obtener precio aplicable",
@@ -38,7 +41,7 @@ public class PriceController {
             @ApiResponse(responseCode = "500", description = "Error interno del servidor")
     })
     @GetMapping
-    public ResponseEntity<PriceResponse> getPrice(
+    public ResponseEntity<PriceResponseDTO> getPrice(
             @RequestParam(name="applicationDate", required = true)
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate,
             @RequestParam(name= "productId", required = true) Long productId,
@@ -50,6 +53,6 @@ public class PriceController {
         Price price = priceService.getApplicablePrice(applicationDate, productId, brandId)
                 .orElseThrow(() -> new PriceNotFoundException(productId, brandId));
 
-        return ResponseEntity.ok(PriceResponse.from(price));
+        return ResponseEntity.ok(priceMapper.toResponse(price));
     }
 }

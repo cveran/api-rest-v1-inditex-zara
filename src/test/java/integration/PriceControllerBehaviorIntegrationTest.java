@@ -1,5 +1,6 @@
 package integration;
 
+import com.inditex.zara.api.infrastructure.adapters.inbound.rest.controller.price.dtos.PriceResponseDTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -14,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
         classes = com.inditex.zara.api.ApiRestInditexZaraApplication.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-class PriceControllerErrorIntegrationTest {
+class PriceControllerBehaviorIntegrationTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -59,5 +64,46 @@ class PriceControllerErrorIntegrationTest {
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
         assertThat(response.getBody()).contains("Error interno del servidor");
+    }
+
+
+    @Test
+    @DisplayName("Debería devolver 200 OK con contenido válido")
+    void shouldReturn200WithValidResponse() {
+        String url = BASE_URL + "?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1";
+
+        ResponseEntity<PriceResponseDTO> response = restTemplate.getForEntity(url, PriceResponseDTO.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().productId()).isEqualTo(35455);
+        assertThat(response.getBody().brandId()).isEqualTo(1);
+        assertThat(response.getBody().priceList()).isEqualTo(1);
+        assertThat(response.getBody().startDate()).isEqualTo("2020-06-14T00:00:00");
+        assertThat(response.getBody().endDate()).isEqualTo("2020-12-31T23:59:59");
+        assertThat(response.getBody().price()).isEqualByComparingTo(new BigDecimal("35.5"));
+        assertThat(response.getBody().currency()).isEqualTo("EUR");
+    }
+
+
+
+    @Test
+    @DisplayName("Debe crear y validar correctamente los campos del PriceResponseDTO")
+    void shouldCreateDtoManually() {
+        PriceResponseDTO dto = new PriceResponseDTO(
+                35455L, 1L, 1,
+                LocalDateTime.parse("2020-06-14T00:00:00"),
+                LocalDateTime.parse("2020-12-31T23:59:59"),
+                new BigDecimal("35.50"),
+                "EUR"
+        );
+
+        assertThat(dto.productId()).isEqualTo(35455L);
+        assertThat(dto.brandId()).isEqualTo(1L);
+        assertThat(dto.priceList()).isEqualTo(1);
+        assertThat(dto.startDate()).isEqualTo(LocalDateTime.parse("2020-06-14T00:00:00"));
+        assertThat(dto.endDate()).isEqualTo(LocalDateTime.parse("2020-12-31T23:59:59"));
+        assertThat(dto.price()).isEqualByComparingTo("35.50");
+        assertThat(dto.currency()).isEqualTo("EUR");
     }
 }

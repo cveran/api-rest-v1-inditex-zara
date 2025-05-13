@@ -1,8 +1,8 @@
-package com.inditex.zara.api.infrastructure.adapters.inbound.rest;
+package com.inditex.zara.api.infrastructure.adapters.inbound.rest.controller.price.dtos;
 
 import java.time.LocalDateTime;
 
-public record ErrorResponse(
+public record ErrorResponseDTO(
         LocalDateTime timestamp,
         int status,
         String error,
