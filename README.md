@@ -8,6 +8,7 @@ API REST desarrollada con Java 17 y Spring Boot 3.4 para la consulta del precio 
 ## 📦 Tecnologías
 
 - Java 17
+- Maven
 - Spring Boot 3.4.5
 - Spring Web
 - Spring Data JPA
