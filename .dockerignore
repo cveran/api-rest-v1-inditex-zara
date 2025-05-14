@@ -1,0 +1,25 @@
+# Maven
+target/
+.settings/
+.classpath
+.project
+
+# Git
+.git
+.gitignore
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docs/builds
+*.md
+*.log
+
+# Build tools
+Dockerfile
+Makefile

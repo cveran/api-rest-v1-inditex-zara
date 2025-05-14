@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "812d7136-a4de-4201-8ef4-e1aba226d240",
+		"name": "Inditex Zara Pricing API v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7363840",
+		"_collection_link": "https://martian-escape-226213.postman.co/workspace/TFM~a8c1cc0e-c3d6-4117-86a7-f9afdea932c3/collection/7363840-812d7136-a4de-4201-8ef4-e1aba226d240?action=share&source=collection_link&creator=7363840"
+	},
+	"item": [
+		{
+			"name": "DEV",
+			"item": [
+				{
+					"name": "Test 1: 14-Jun-2020 10:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 2: 14-Jun-2020 16:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T16:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 3: 14-Jun-2020 21:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-06-14T21:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 4: 15-Jun-2020 10:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-15T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 5: 16-Jun-2020 21:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-16T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 6 Negativo: Sin precio disponible",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-01-01T00:00:00&productId=35455&brandId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-01-01T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 7 Negativo: parametro incorrecto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prices?applicationDate=2020-01-01T00:00:00&productId=35455&brandI=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-01-01T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandI",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PROD",
+			"item": [
+				{
+					"name": "Test 1: 14-Jun-2020 10:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-06-14T10:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 2: 14-Jun-2020 16:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-06-14T16:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T16:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 3: 14-Jun-2020 21:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-06-14T21:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-14T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 4: 15-Jun-2020 10:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-06-15T10:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-15T10:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 5: 16-Jun-2020 21:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-06-16T21:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-06-16T21:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 6 Negativo: Sin precio disponible",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-01-01T00:00:00&productId=35455&brandId=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-01-01T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test 7 Negativo: parametro incorrecto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-rest-inditex-zara-prod-279278482933.europe-southwest1.run.app/api/v1/prices?applicationDate=2020-01-01T00:00:00&productId=35455&brandI=1",
+							"protocol": "https",
+							"host": [
+								"api-rest-inditex-zara-prod-279278482933",
+								"europe-southwest1",
+								"run",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prices"
+							],
+							"query": [
+								{
+									"key": "applicationDate",
+									"value": "2020-01-01T00:00:00"
+								},
+								{
+									"key": "productId",
+									"value": "35455"
+								},
+								{
+									"key": "brandI",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
